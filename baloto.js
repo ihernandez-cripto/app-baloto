@@ -6,6 +6,7 @@ const superBalota = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '1
 // Arreglo para almacenar los resultados
 let resultados = [];
 let arregloInicializado = [];
+
 // Función para seleccionar y eliminar un elemento aleatorio
 function seleccionarAleatorio(array) {
   const indiceAleatorio = Math.floor(Math.random() * array.length);
@@ -28,9 +29,8 @@ function inicializarElementos(array) {
 function mezclar(nombreArreglo, numeroApostar){
     resultados = [];
     const arregloUtilizado = eval(nombreArreglo).slice(); // crear el respaldo del arreglo original
-    const arregloAletorio = inicializarElementos(arregloUtilizado).slice();
     for (let i = 0; i < numeroApostar; i++) {
-        const elementoSeleccionado = seleccionarAleatorio(arregloAletorio);
+        const elementoSeleccionado = seleccionarAleatorio(inicializarElementos(arregloUtilizado));
         resultados.push(elementoSeleccionado);
       }
       document.querySelector('.input-1').value=resultados;
