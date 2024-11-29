@@ -28,8 +28,9 @@ function inicializarElementos(array) {
 function mezclar(nombreArreglo, numeroApostar){
     resultados = [];
     const arregloUtilizado = eval(nombreArreglo).slice(); // crear el respaldo del arreglo original
+    const arregloAletorio = inicializarElementos(arregloUtilizado).slice();
     for (let i = 0; i < numeroApostar; i++) {
-        const elementoSeleccionado = seleccionarAleatorio(inicializarElementos(arregloUtilizado));
+        const elementoSeleccionado = seleccionarAleatorio(arregloAletorio);
         resultados.push(elementoSeleccionado);
       }
       document.querySelector('.input-1').value=resultados;
