@@ -27,7 +27,7 @@ function inicializarElementos(array) {
 // y construir el arreglo de la puesta
 function mezclar(nombreArreglo, numeroApostar){
     resultados = [];
-    const arregloUtilizado = eval(nombreArreglo);
+    const arregloUtilizado = eval(nombreArreglo).slice(); // crear el respaldo del arreglo original
     for (let i = 0; i < numeroApostar; i++) {
         const elementoSeleccionado = seleccionarAleatorio(inicializarElementos(arregloUtilizado));
         resultados.push(elementoSeleccionado);
